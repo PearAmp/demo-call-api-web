@@ -7,13 +7,13 @@
       <div v-if="hover">
         <div class="vflex">
           <div class="block">
-            <v-icon color="#FFF" size="20px">mdi-menu</v-icon>
+            <v-icon color="#FFF" size="15px">mdi-menu</v-icon>
           </div>
           <div class="block ml-2 mr-2">
-            <v-icon color="#FFF" size="20px">mdi-cart</v-icon>
+            <v-icon color="#FFF" size="15px">mdi-cart</v-icon>
           </div>
           <div class="block">
-            <v-icon color="#FFF" size="20px">mdi-heart</v-icon>
+            <v-icon color="#FFF" size="15px">mdi-heart</v-icon>
           </div>
         </div>
       </div>
@@ -33,9 +33,15 @@ export default {
 <style lang='scss' scoped>
 .Product {
   border: 1px solid #f0f0f0;
+  height: 32vh;
   display: flex;
   flex-direction: column;
   align-items: center;
+  h2 {
+    font-size: 1.15rem;
+    color: $color-base;
+    font-weight: 500;
+  }
 }
 img {
   width: 100%;

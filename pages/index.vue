@@ -64,13 +64,13 @@
           <v-col cols="12" md="3" sm="6">
             <ProductPrice />
           </v-col>
-           <v-col cols="12" md="3" sm="6">
+          <v-col cols="12" md="3" sm="6">
             <ProductPrice />
           </v-col>
-           <v-col cols="12" md="3" sm="6">
+          <v-col cols="12" md="3" sm="6">
             <ProductPrice />
           </v-col>
-           <v-col cols="12" md="3" sm="6">
+          <v-col cols="12" md="3" sm="6">
             <ProductPrice />
           </v-col>
         </v-row>
@@ -93,7 +93,7 @@ export default {
         },
         {
           id: 2,
-          imageSrc: require('@/static/icon/badge.png'),
+          imageSrc: require('@/static/icon/vegetable.png'),
           bg: {
             'background-color': '#dcc698',
           },
@@ -111,7 +111,7 @@ export default {
         },
         {
           id: 4,
-          imageSrc: require('@/static/icon/badge.png'),
+          imageSrc: require('@/static/icon/customer-service.png'),
           bg: {
             'background-color': '#dcd691',
           },
