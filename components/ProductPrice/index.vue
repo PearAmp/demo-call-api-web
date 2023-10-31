@@ -1,9 +1,9 @@
 <template>
   <v-hover v-slot="{ hover }">
     <div class="Product">
-      <img src="@/static/mock/product-1.png" alt="" />
-      <h3>BELL PEPPER</h3>
-      <h2 id="logo">$80.00</h2>
+      <img :src="imgProduct" alt="" />
+      <h3>{{ProductName}}</h3>
+      <h2 id="logo">${{ProductPrice}}</h2>
       <div v-if="hover">
         <div class="vflex">
           <div class="block">
@@ -24,6 +24,11 @@
 <script>
 export default {
   name: 'ProductPrice',
+  props: {
+    imgProduct: String,
+    ProductName: String,
+    ProductPrice: String
+  },
   data() {
     return {}
   },
@@ -37,6 +42,7 @@ export default {
   display: flex;
   flex-direction: column;
   align-items: center;
+  max-width: 280px;
   h2 {
     font-size: 1.15rem;
     color: $color-base;
@@ -45,7 +51,7 @@ export default {
 }
 img {
   width: 100%;
-  max-width: 280px;
+  max-width: 250px;
   transition: transform 0.3s;
 }
 img:hover {

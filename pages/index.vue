@@ -60,18 +60,13 @@
           Far far away, behind the word mountains, far from the countries
           Vokalia and Consonantia
         </h2>
-        <v-row>
-          <v-col cols="12" md="3" sm="6">
-            <ProductPrice />
-          </v-col>
-          <v-col cols="12" md="3" sm="6">
-            <ProductPrice />
-          </v-col>
-          <v-col cols="12" md="3" sm="6">
-            <ProductPrice />
-          </v-col>
-          <v-col cols="12" md="3" sm="6">
-            <ProductPrice />
+        <v-row >
+          <v-col cols="12" md="3" sm="6" v-for="item in Product" :key="item.id" class="d-flex justify">
+            <ProductPrice
+              :imgProduct="item.imgProduct"
+              :ProductName="item.ProductName"
+              :ProductPrice="item.ProductPrice"
+            />
           </v-col>
         </v-row>
       </section>
@@ -143,6 +138,56 @@ export default {
           textName: 'Dried',
         },
       ],
+      Product: [
+        {
+          id: 1,
+          imgProduct: require('@/static/mock/product-1.png'),
+          ProductName: 'BELL PEPPER',
+          ProductPrice: '80.00',
+        },
+        {
+          id: 2,
+          imgProduct: require('@/static/mock/product-2.png'),
+          ProductName: 'STRAWBERRY',
+          ProductPrice: '120.00',
+        },
+        {
+          id: 3,
+          imgProduct: require('@/static/mock/product-3.png'),
+          ProductName: 'GREEN BEANS',
+          ProductPrice: '120.00',
+        },
+        {
+          id: 4,
+          imgProduct: require('@/static/mock/product-4.png'),
+          ProductName: 'PURPLE CABBAGE',
+          ProductPrice: '120.00',
+        },
+        {
+          id: 5,
+          imgProduct: require('@/static/mock/product-5.png'),
+          ProductName: 'TOMATOE',
+          ProductPrice: '80.00',
+        },
+        {
+          id: 6,
+          imgProduct: require('@/static/mock/product-6.png'),
+          ProductName: 'BROCOLLI',
+          ProductPrice: '120.00',
+        },
+        {
+          id: 7,
+          imgProduct: require('@/static/mock/product-7.png'),
+          ProductName: 'CARROTS',
+          ProductPrice: '120.00',
+        },
+        {
+          id: 8,
+          imgProduct: require('@/static/mock/product-8.png'),
+          ProductName: 'FRUIT JUICE',
+          ProductPrice: '120.00',
+        },
+      ],
     }
   },
 }
@@ -157,7 +202,6 @@ export default {
 .header {
   margin-top: 3rem;
   background-image: url('@/static/bg_1.jpg');
-  background-color: #cccccc;
   height: 60vh !important;
   background-position: center;
   background-repeat: no-repeat;
@@ -222,5 +266,20 @@ export default {
   display: flex;
   flex-direction: column;
   justify-content: space-between;
+}
+.Product {
+  margin: 1rem 0;
+  text-align: center;
+  h3 {
+    color: $color-base;
+  }
+  h1 {
+    font-size: 2rem;
+    font-weight: 600;
+    padding: 1rem 0;
+  }
+  h2 {
+    padding-bottom: 1rem;
+  }
 }
 </style>

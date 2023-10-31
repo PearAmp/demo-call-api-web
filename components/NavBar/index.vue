@@ -7,9 +7,11 @@
         </v-col>
         <v-col cols="12" md="6" sm="6">
           <v-list class="vflex">
-            <v-list-item>
-              <v-list-item-title>Home</v-list-item-title>
-            </v-list-item>
+            <nuxt-link to="/">
+              <v-list-item>
+                <v-list-item-title>Home</v-list-item-title>
+              </v-list-item>
+            </nuxt-link>
             <v-menu offset-y>
               <template v-slot:activator="{ on, attrs }">
                 <v-list-item>
@@ -24,12 +26,16 @@
                 </v-list-item>
               </v-list>
             </v-menu>
-            <v-list-item>
-              <v-list-item-title>ABOUT</v-list-item-title>
-            </v-list-item>
-            <v-list-item>
-              <v-list-item-title>BLOG</v-list-item-title>
-            </v-list-item>
+            <nuxt-link to="/about">
+              <v-list-item>
+                <v-list-item-title>ABOUT</v-list-item-title>
+              </v-list-item>
+            </nuxt-link>
+            <nuxt-link to="/blog">
+              <v-list-item>
+                <v-list-item-title>BLOG</v-list-item-title>
+              </v-list-item>
+            </nuxt-link>
             <v-list-item>
               <v-list-item-title>CONTACT</v-list-item-title>
             </v-list-item>
@@ -44,34 +50,34 @@
       </v-row>
     </div>
     <div class="Navmedia">
-        <v-app-bar color="deep-purple" dark>
-          <v-app-bar-nav-icon @click="drawer = true"></v-app-bar-nav-icon>
+      <v-app-bar color="deep-purple" dark>
+        <v-app-bar-nav-icon @click="drawer = true"></v-app-bar-nav-icon>
 
-          <v-toolbar-title>Title</v-toolbar-title>
-        </v-app-bar>
+        <v-toolbar-title>Title</v-toolbar-title>
+      </v-app-bar>
 
-        <v-navigation-drawer v-model="drawer" absolute temporary>
-          <v-list nav dense>
-            <v-list-item-group
-              v-model="group"
-              active-class="deep-purple--text text--accent-4"
-            >
-              <v-list-item>
-                <v-list-item-icon>
-                  <v-icon>mdi-home</v-icon>
-                </v-list-item-icon>
-                <v-list-item-title>Home</v-list-item-title>
-              </v-list-item>
+      <v-navigation-drawer v-model="drawer" absolute temporary>
+        <v-list nav dense>
+          <v-list-item-group
+            v-model="group"
+            active-class="deep-purple--text text--accent-4"
+          >
+            <v-list-item>
+              <v-list-item-icon>
+                <v-icon>mdi-home</v-icon>
+              </v-list-item-icon>
+              <v-list-item-title>Home</v-list-item-title>
+            </v-list-item>
 
-              <v-list-item>
-                <v-list-item-icon>
-                  <v-icon>mdi-account</v-icon>
-                </v-list-item-icon>
-                <v-list-item-title>Account</v-list-item-title>
-              </v-list-item>
-            </v-list-item-group>
-          </v-list>
-        </v-navigation-drawer>
+            <v-list-item>
+              <v-list-item-icon>
+                <v-icon>mdi-account</v-icon>
+              </v-list-item-icon>
+              <v-list-item-title>Account</v-list-item-title>
+            </v-list-item>
+          </v-list-item-group>
+        </v-list>
+      </v-navigation-drawer>
     </div>
   </div>
 </template>
@@ -129,7 +135,6 @@ h1 {
   }
   .Navmedia {
     display: block;
-
   }
 }
 </style>
