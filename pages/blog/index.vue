@@ -15,6 +15,7 @@
             />
           </div>
         </v-col>
+        <!-- col2 -->
         <v-col cols="12" md="4" sm="4">
           <div class="Search">
             <v-text-field
@@ -32,7 +33,31 @@
               </div>
             </div>
           </div>
+          <div class="BlogRecent">
+            <h2>Recent Blog</h2>
+            <div v-for="item in recent" :key="item.id">
+              <BlogRecent
+                :recentImg="item.recentImg"
+                :recentTitle="item.title"
+                :date="item.date"
+                :typeUser="item.typeUser"
+                :message="item.message"
+                class="mb-10"
+              />
+            </div>
+          </div>
+          <div class="Tag">
+            <h2>Tag Cloud</h2>
+            <div class="vflex">
+              <div v-for="item in Tag" :key="item">
+                <button >
+                  <h3>{{ item.tag }}</h3>
+                </button>
+              </div>
+            </div>
+          </div>
         </v-col>
+        <!-- col2 -->
       </v-row>
     </div>
   </div>
@@ -43,6 +68,64 @@ export default {
   name: 'Blog',
   data() {
     return {
+      Tag: [
+        {
+          tag: 'FRUIT',
+        },
+        {
+          tag: 'TOMETO',
+        },
+        {
+          tag: 'MANGO',
+        },
+        {
+          tag: 'APPLE',
+        },
+        {
+          tag: 'CARROT',
+        },
+        {
+          tag: 'ORANGE',
+        },
+        {
+          tag: 'PEPER',
+        },
+        {
+          tag: 'PEPER',
+        },
+        {
+          tag: 'PEPER',
+        },
+      ],
+      recent: [
+        {
+          id: 1,
+          recentImg: require('@/static/mock/juices.jpeg'),
+          title:
+            'Even the all-powerful Pointing has no control about the blind texts',
+          date: 'April 09, 2019',
+          typeUser: 'Admin',
+          message: '19',
+        },
+        {
+          id: 2,
+          recentImg: require('@/static/mock/fruit.jpeg'),
+          title:
+            'Even the all-powerful Pointing has no control about the blind texts',
+          date: 'April 09, 2019',
+          typeUser: 'Admin',
+          message: '19',
+        },
+        {
+          id: 3,
+          recentImg: require('@/static/mock/Dried.jpeg'),
+          title:
+            'Even the all-powerful Pointing has no control about the blind texts',
+          date: 'April 09, 2019',
+          typeUser: 'Admin',
+          message: '19',
+        },
+      ],
       Blog: [
         {
           id: 1,
@@ -72,12 +155,12 @@ export default {
           type: 'Fruits',
           quantity: '22',
         },
-         {
+        {
           id: 3,
           type: 'Juice',
           quantity: '37',
         },
-         {
+        {
           id: 4,
           type: 'Dries',
           quantity: '42',
@@ -121,6 +204,37 @@ export default {
     border-bottom: 1px dotted $color-base;
     h3 {
       padding: 0.5rem 0;
+    }
+  }
+}
+.BlogRecent {
+  h2 {
+    padding: 2rem 0 1rem 0;
+  }
+}
+.Tag {
+  .vflex {
+    display: flex;
+    flex-wrap: wrap;
+  }
+  h2 {
+    padding-bottom: 1rem;
+  }
+  button {
+    margin-bottom: 0.5rem;
+    border: 1px solid $color-label;
+    border-radius: 0.5rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 0.5rem;
+    margin-right: 0.5rem;
+    &:hover {
+      border: 1px solid #000;
+    }
+    h3 {
+      font-weight: 300;
+      font-size: 0.8rem;
     }
   }
 }
