@@ -36,15 +36,19 @@
                 <v-list-item-title>BLOG</v-list-item-title>
               </v-list-item>
             </nuxt-link>
-            <v-list-item>
-              <v-list-item-title>CONTACT</v-list-item-title>
-            </v-list-item>
-            <v-list-item>
+            <nuxt-link to="/contact">
+              <v-list-item>
+                <v-list-item-title>CONTACT</v-list-item-title>
+              </v-list-item>
+            </nuxt-link>
+            <nuxt-link to="/cart">
+              <v-list-item>
               <v-list-item-icon>
                 <v-icon>mdi-cart</v-icon>
                 <h5>[0]</h5>
               </v-list-item-icon>
             </v-list-item>
+            </nuxt-link>
           </v-list>
         </v-col>
       </v-row>
@@ -135,6 +139,11 @@ h1 {
   }
   .Navmedia {
     display: block;
+  }
+
+  .v-navigation-drawer--is-mobile:not(.v-navigation-drawer--close),
+  .v-navigation-drawer--temporary:not(.v-navigation-drawer--close) {
+    height: 100vh !important;
   }
 }
 </style>
