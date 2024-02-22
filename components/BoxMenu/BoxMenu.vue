@@ -3,8 +3,8 @@
     <div class="box" :style="getStyle">
       <img :src="imageSrc" alt="" />
     </div>
-    <h3>{{title}}</h3>
-    <h4>{{label}}</h4>
+    <h3>{{ title }}</h3>
+    <h4>{{ label }}</h4>
   </div>
 </template>
 
@@ -15,7 +15,7 @@ export default {
     stylings: Object,
     imageSrc: String,
     title: String,
-    label: String
+    label: String,
   },
   computed: {
     getStyle() {

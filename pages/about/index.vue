@@ -8,11 +8,11 @@
       <v-row class="align-center">
         <v-col cols="12" md="4" sm="3" class="background"> </v-col>
         <v-col cols="12" md="8" sm="9" class="pa-12">
-          <h1>Welcome to Vegefoods an eCommerce website</h1>
+          <h1>Welcome to vega-foods an eCommerce website</h1>
           <p>
             Far far away, behind the word mountains, far from the countries
-            Vokalia and Consonantia, there live the blind texts. Separated they
-            live in Bookmarksgrove right at the coast of the Semantics, a large
+            Vedalia and Consonant, there live the blind texts. Separated they
+            live in Bookmarks grove right at the coast of the Semantics, a large
             language ocean.
           </p>
           <p>
@@ -21,9 +21,12 @@
             with Longe and Parole and dragged her into their agency, where they
             abused her for their.
           </p>
-          <button>Shop now</button>
+          <button @click="show = !show">Shop now</button>
         </v-col>
       </v-row>
+      <div class="box" v-if="show">
+        <h1>show</h1>
+      </div>
     </div>
   </div>
 </template>
@@ -33,7 +36,7 @@ export default {
   name: 'About',
   data() {
     return {
-     
+      show: false,
     }
   },
 }
