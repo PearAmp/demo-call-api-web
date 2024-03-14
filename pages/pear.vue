@@ -66,7 +66,10 @@
     <br />
     <br />
     <!-- Q7 -->
-   
+    <h2>Click Change Font Css</h2>
+    <h2><span class="txt-red">Ans</span></h2>
+    <h3 :style="{ fontSize: fontStrong }">{{ txtShow }}</h3>
+    <v-btn color="primary" class="btn-click" @click="changeFont">Click Chang Font</v-btn>
   </div>
 </template>
 
@@ -86,6 +89,10 @@ export default {
       // Q4
       text: 'Before',
       bgColor: 'white',
+
+      // Q5
+      txtShow: 'font-small',
+      fontStrong: '16px',
     }
   },
   computed: {
@@ -138,6 +145,10 @@ export default {
     // Ans6
     Print() {
       window.print()
+    },
+    // Ans7
+    changeFont() {
+      this.fontStrong = '60px'
     },
   },
 }
