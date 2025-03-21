@@ -44,6 +44,7 @@ export default {
     '@nuxtjs/eslint-module',
     // https://go.nuxtjs.dev/vuetify
     '@nuxtjs/vuetify',
+    
   ],
 
   // Modules: https://go.nuxtjs.dev/config-modules
@@ -51,7 +52,19 @@ export default {
     // https://go.nuxtjs.dev/axios
     '@nuxtjs/axios',
     'vue-sweetalert2/nuxt',
+    '@nuxtjs/i18n'
+    
   ],
+  i18n: {
+    locales: [
+      { code: 'en', name: 'English', file: 'en.json' },
+      { code: 'th', name: 'ไทย', file: 'th.json' }
+    ],
+    lazy: true, // Load translation files only when needed
+    langDir: 'locales/', // Directory for translation files
+    defaultLocale: 'th', // Default language
+    strategy: 'no_prefix' // URL structure (no prefix for default)
+  },
 
   // Axios module configuration: https://go.nuxtjs.dev/config-axios
   axios: {
